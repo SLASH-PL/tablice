@@ -1,90 +1,61 @@
 ﻿int[] a;
-a = new int[] { -2, -1, 0, 1, 4 };
+a = new int[] { 0, 1, 1, 2, 3, 3, 3 };
 int[] b;
-b = new int[] { -3, -2, -1, 1, 2, 3 };
+b = new int[] { 0, 1, 2, 3, 3 };
 int[] c = new int[9];
 
 
-bool empty = true;
+int i = 0, j = 0;
+bool isEmpty = true;
 
-// Iterate over elements of array a
-for (int i = 0; i < a.Length; i++)
+while (i < a.Length && j < b.Length)
 {
-    bool existsInB = false;
-
-    // Check if current element of a exists in array b
-    for (int j = 0; j < b.Length; j++)
+    if (a[i] < b[j])
     {
-        if (a[i] == b[j])
-        {
-            existsInB = true;
-            break;
-        }
-    }
-
-    // If current element of a does not exist in b, print it
-    if (!existsInB)
-    {
-        // Check if current element is a duplicate
-        bool duplicate = false;
-        for (int k = 0; k < i; k++)
-        {
-            if (a[i] == a[k])
-            {
-                duplicate = true;
-                break;
-            }
-        }
-
-        // If current element is not a duplicate, print it
-        if (!duplicate)
+        if (i == 0 || a[i] != a[i - 1])
         {
             Console.Write(a[i] + " ");
-            empty = false;
+            isEmpty = false;
         }
+        i++;
+    }
+    else if (a[i] > b[j])
+    {
+        if (j == 0 || b[j] != b[j - 1])
+        {
+            Console.Write(b[j] + " ");
+            isEmpty = false;
+        }
+        j++;
+    }
+    else
+    {
+        i++;
+        j++;
     }
 }
 
-// Iterate over elements of array b
-for (int i = 0; i < b.Length; i++)
+while (i < a.Length)
 {
-    bool existsInA = false;
-
-    // Check if current element of b exists in array a
-    for (int j = 0; j < a.Length; j++)
+    if (i == 0 || a[i] != a[i - 1])
     {
-        if (b[i] == a[j])
-        {
-            existsInA = true;
-            break;
-        }
+        Console.Write(a[i] + " ");
+        isEmpty = false;
     }
-
-    // If current element of b does not exist in a, print it
-    if (!existsInA)
-    {
-        // Check if current element is a duplicate
-        bool duplicate = false;
-        for (int k = 0; k < i; k++)
-        {
-            if (b[i] == b[k])
-            {
-                duplicate = true;
-                break;
-            }
-        }
-
-        // If current element is not a duplicate, print it
-        if (!duplicate)
-        {
-            Console.Write(b[i] + " ");
-            empty = false;
-        }
-    }
+    i++;
 }
 
-// If there are no numbers to print, print "empty"
-if (empty)
+while (j < b.Length)
 {
-    Console.WriteLine("empty");
+    if (j == 0 || b[j] != b[j - 1])
+    {
+        Console.Write(b[j] + " ");
+        isEmpty = false;
+    }
+    j++;
+}
+
+if (isEmpty)
+{
+    Console.Write("empty");
 }
