@@ -1,10 +1,10 @@
 ﻿int[] a;
-a = new int[] { -2, -1, 0, 1, 1, 4 };
+a = new int[] { -2, -1, 0, 0, 1, 4 };
 int[] b;
-b = new int[] { -3, -2, -1, 2, 3 };
+b = new int[] { -3, -2, -1, 1, 2, 3 };
 
 bool pusto = true;
-for (int i = 0; i < a.Length; i++)
+for (int i = 0; i < a.Length; i++) 
 {
     bool jest = false;
     for (int j = 0; j < b.Length; j++)
@@ -14,15 +14,23 @@ for (int i = 0; i < a.Length; i++)
             jest = true;
             break;
         }
-        else if (a[i - 1] == b[j])
-        {
-            jest = true;
-        }
     }
-    if (jest == false)
+    if (!jest)
     {
-        Console.Write(a[i] + " ");
-        pusto = false;
+        bool duplicate = false;
+        for (int k = 0; k < i; k++)
+        {
+            if (a[i] == a[k])
+            {
+                duplicate = true;
+                break;
+            }
+        }
+        if (!duplicate)
+        {
+            Console.Write(a[i] + " ");
+            pusto = false;
+        }
     }
 }
 if (pusto == true)
