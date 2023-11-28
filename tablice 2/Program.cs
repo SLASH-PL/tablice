@@ -1,54 +1,39 @@
-﻿using System;
+﻿int[] a;
+a = new int[] { 1, 2, 3, 3};
+int[] b;
+b = new int[] {1, 2, 3, 3, 4};
 
-class Program
+bool pusto = true;
+for (int i = 0; i < a.Length; i++)
 {
-    static void Main()
+    bool jest = false;
+    for (int j = 0; j < b.Length; j++)
     {
-        int[] a = { -2, -1, 0, 0, 1, 4 };
-        int[] b = { -3, -2, -1, 1, 2, 3 };
-
-        Print(a, b);
-    }
-
-    public static void Print(int[] a, int[] b)
-    {
-        int i = 0;
-        int j = 0;
-
-        while (i < a.Length && j < b.Length)
+        if (a[i] == b[j])
         {
-            if (a[i] < b[j])
+            jest = true;
+            break;
+        }
+    }
+    if (jest)
+    {
+        bool duplicate = false;
+        for (int k = 0; k < i; k++)
+        {
+            if (a[i] == a[k])
             {
-                Console.Write(a[i] + " ");
-                i++;
-            }
-            else if (a[i] > b[j])
-            {
-                j++;
-            }
-            else
-            {
-                // Skip duplicates
-                i++;
-                j++;
+                duplicate = true;
+                break;
             }
         }
-
-        // Print remaining elements from array 'a'
-        while (i < a.Length)
+        if (!duplicate)
         {
             Console.Write(a[i] + " ");
-            i++;
-        }
-
-        // Check if no numbers were printed
-        if (i == 0)
-        {
-            Console.WriteLine("empty");
-        }
-        else
-        {
-            Console.WriteLine();
+            pusto = false;
         }
     }
+}
+if (pusto == true)
+{
+    Console.WriteLine("empty");
 }
