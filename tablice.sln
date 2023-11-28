@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "macierze", "macierze\macier
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tablice 2", "tablice 2\tablice 2.csproj", "{5C5D8496-3D8B-4D17-B6B1-3EFD2DA4EB19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tablice 3", "tablice 3\tablice 3.csproj", "{EDB2F5A0-3B71-4104-8C84-16EBFCDDC915}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5C5D8496-3D8B-4D17-B6B1-3EFD2DA4EB19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C5D8496-3D8B-4D17-B6B1-3EFD2DA4EB19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C5D8496-3D8B-4D17-B6B1-3EFD2DA4EB19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDB2F5A0-3B71-4104-8C84-16EBFCDDC915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDB2F5A0-3B71-4104-8C84-16EBFCDDC915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDB2F5A0-3B71-4104-8C84-16EBFCDDC915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDB2F5A0-3B71-4104-8C84-16EBFCDDC915}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
