@@ -58,4 +58,4 @@ while (j < b.Length)
 if (isEmpty)
 {
     Console.Write("empty");
-}
+} 
